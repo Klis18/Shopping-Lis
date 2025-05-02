@@ -9,9 +9,9 @@
     <div class="mt-2 flex items-center pb-4">
         <div>
             <label for="cantidadProductos" class="mr-2">Cantidad:</label>
-            <input type="number" class="rounded-lg px-2 border-2 border-gray-200 w-16 text-center" placeholder="1">
+            <input type="number" [(ngModel)]="cantidadProductos" class="rounded-lg px-2 border-2 border-gray-200 w-16 text-center" placeholder="1">
         </div>
-        <button class="bg-gray-900 rounded-lg px-2 pt-1 ml-2">
+        <button class="bg-gray-900 rounded-lg px-2 pt-1 ml-2" (click)="addProductShopping(productItem())">
             <mat-icon class="text-white">
                 add_shopping_cart
             </mat-icon>

@@ -1,13 +1,18 @@
-import { Component, input } from '@angular/core';
+import { Component, input, NgModule} from '@angular/core';
 import { Product } from '../../interfaces/product.interface';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
+import { ShoppingCarService } from '../../../shopping/services/shopping-car.service';
+import { ShoppingProduct } from '../../../shopping/interfaces/shopping-product.interface';
+import { FormsModule } from '@angular/forms';  // <-- Agregar esta línea
+
 
 @Component({
   selector: 'app-product-item',
   imports: [
     CommonModule,
-    MatIconModule
+    FormsModule,
+    MatIconModule,
   ],
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.css'
@@ -15,4 +20,17 @@ import {MatIconModule} from '@angular/material/icon';
 export class ProductItemComponent {
 
   productItem = input.required<Product>();
+
+  cantidadProductos: number = 1;
+
+  constructor(private shoppingCarService: ShoppingCarService){}
+
+  addProductShopping(product: Product){
+    const title = product.title;
+    const quantity = this.cantidadProductos;
+    const price = product.price;
+    const shoppingProducts = {productName:title, quantity:quantity, price:price} as ShoppingProduct;
+    this.shoppingCarService.addProductsCart(shoppingProducts);
+    this.shoppingCarService.getProductsCar();
+  }
 }
