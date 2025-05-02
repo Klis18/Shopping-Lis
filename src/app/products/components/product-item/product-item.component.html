@@ -1,1 +1,20 @@
-<p>product-item works!</p>
+<div class="shadow-sm rounded-3xl">
+    <div class="w-full rounded-t-3xl">
+        <img [src]="productItem().images[0]" [alt]="productItem().title" class="rounded-t-3xl">
+    </div>
+    <div class="flex items-center mt-2">
+        <span class="font-medium w-3/4">{{productItem().title}}</span>
+        <span class="text-xl mx-2">{{productItem().price | currency}}</span>
+    </div>
+    <div class="mt-2 flex items-center pb-4">
+        <div>
+            <label for="cantidadProductos" class="mr-2">Cantidad:</label>
+            <input type="number" class="rounded-lg px-2 border-2 border-gray-200 w-16 text-center" placeholder="1">
+        </div>
+        <button class="bg-gray-900 rounded-lg px-2 pt-1 ml-2">
+            <mat-icon class="text-white">
+                add_shopping_cart
+            </mat-icon>
+        </button>
+    </div>
+</div>

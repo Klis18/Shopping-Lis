@@ -1,1 +1,9 @@
-<p>product-page works!</p>
+<h1 class="text-3xl">Productos</h1>
+<hr/>
+<div class="grid grid-cols-4 gap-6 mt-4">
+    @for(product of productsList; track product.id){
+        <div>
+            <app-product-item [productItem]="product"></app-product-item>
+        </div>
+    }
+</div>
