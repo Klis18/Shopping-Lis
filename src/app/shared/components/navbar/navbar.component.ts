@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'shared-navbar',
-  imports: [],
+  imports: [
+    MatIconModule
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

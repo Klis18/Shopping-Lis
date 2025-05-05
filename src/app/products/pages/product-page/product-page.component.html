@@ -1,9 +1,11 @@
-<h1 class="text-3xl">Productos</h1>
-<hr/>
-<div class="grid grid-cols-4 gap-6 mt-4">
-    @for(product of productsList; track product.id){
-        <div>
-            <app-product-item [productItem]="product"></app-product-item>
-        </div>
-    }
+<div class="h-full">
+    <h1 class="text-3xl">Productos</h1>
+    <hr/>
+    <div class="grid gid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8 mt-4">
+        @for(product of productsList; track product.id){
+            <div>
+                <app-product-item [productItem]="product"></app-product-item>
+            </div>
+        }
+    </div>
 </div>

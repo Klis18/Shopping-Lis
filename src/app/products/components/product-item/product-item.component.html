@@ -1,17 +1,15 @@
-<div class="shadow-sm rounded-3xl">
+<div class="shadow-lg rounded-3xl">
     <div class="w-full rounded-t-3xl">
         <img [src]="productItem().images[0] | imagePipe" [alt]="productItem().title" class="rounded-t-3xl w-full h-full">
-        <!-- <img src="../images/no-image.jpg" [alt]="productItem().title" class="rounded-t-3xl w-full"> -->
-
     </div>
-    <div class="flex items-center mt-2">
+    <div class="flex items-center mt-2 px-2">
         <span class="font-medium w-3/4">{{productItem().title}}</span>
-        <span class="text-xl mx-2">{{productItem().price | currency}}</span>
+        <span class="text-xl mx-2 font-medium">{{productItem().price | currency}}</span>
     </div>
-    <div class="mt-2 flex items-center pb-4">
+    <div class="mt-2 flex items-center pb-4 px-2">
         <div>
             <label for="cantidadProductos" class="mr-2">Cantidad:</label>
-            <input type="number" [(ngModel)]="cantidadProductos" class="rounded-lg px-2 border-2 border-gray-200 w-16 text-center" placeholder="1">
+            <input type="number" [(ngModel)]="cantidadProductos" class="rounded-lg px-2 border-2 border-gray-200 w-14 text-center" placeholder="1">
         </div>
         <button class="bg-gray-900 rounded-lg px-2 pt-1 ml-2" (click)="addProductShopping(productItem())">
             <mat-icon class="text-white">
