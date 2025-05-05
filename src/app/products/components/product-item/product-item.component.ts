@@ -4,7 +4,8 @@ import { CommonModule} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import { ShoppingCarService } from '../../../shopping/services/shopping-car.service';
 import { ShoppingProduct } from '../../../shopping/interfaces/shopping-product.interface';
-import { FormsModule } from '@angular/forms';  // <-- Agregar esta línea
+import { FormsModule } from '@angular/forms';
+import { ImagePipe } from '../../pipes/image-pipe.pipe';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';  // <-- Agregar esta línea
     CommonModule,
     FormsModule,
     MatIconModule,
+    ImagePipe
   ],
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.css'

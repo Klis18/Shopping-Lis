@@ -1,6 +1,8 @@
 <div class="shadow-sm rounded-3xl">
     <div class="w-full rounded-t-3xl">
-        <img [src]="productItem().images[0]" [alt]="productItem().title" class="rounded-t-3xl">
+        <img [src]="productItem().images[0] | imagePipe" [alt]="productItem().title" class="rounded-t-3xl w-full h-full">
+        <!-- <img src="../images/no-image.jpg" [alt]="productItem().title" class="rounded-t-3xl w-full"> -->
+
     </div>
     <div class="flex items-center mt-2">
         <span class="font-medium w-3/4">{{productItem().title}}</span>
